@@ -135,7 +135,7 @@ public class UserLogin extends JFrame {
                     ResultSet x = sta.executeQuery(query);
                     //System.out.println(x.getObject(3));
                     if (x.next()) {
-                        JOptionPane.showMessageDialog(btnNewButton, "Succesful login. Welcome: "+x.getString(1));
+                        JOptionPane.showMessageDialog(btnNewButton, "Succesful login. Welcome: "+fromAscii(x.getString(1)));
                         
                     }
                     else {
@@ -219,5 +219,22 @@ public class UserLogin extends JFrame {
 		System.out.print(convertString);
 		return convertString;
 	}
+	/**
+	 * Converts an input back into readable format
+	 * @author Izhak Hamidi
+	 * @param input the input to be converted into numbers
+	 * @return the input as Ascii numbers
+	 */
+	public String fromAscii(String input) {
+		String convertString="";
+		char[] convert=input.toCharArray();
+		for(int i =0;i<convert.length;i+=3)
+		{
+			convertString+= (char)Integer.parseInt(((char)convert[i]+""+(char)convert[i+1]+""+(char)convert[i+2]));
+		}
+		System.out.print(convertString);
+		return convertString;
+	}
+	
 	
 }

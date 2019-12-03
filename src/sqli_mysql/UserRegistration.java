@@ -176,7 +176,7 @@ public class UserRegistration extends JFrame {
                         JOptionPane.showMessageDialog(btnNewButton, "This is alredy exist");
                     } else {
                         JOptionPane.showMessageDialog(btnNewButton,
-                            "Welcome, " + msg + "Your account is sucessfully created");
+                            "Welcome, " + firstName + "Your account is sucessfully created");
                     }
                     connection.close();
                 } catch (Exception exception) {
