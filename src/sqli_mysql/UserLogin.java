@@ -69,7 +69,7 @@ public class UserLogin extends JFrame {
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
-        JLabel lblNewUserRegister = new JLabel("New User Register");
+        JLabel lblNewUserRegister = new JLabel("User Login");
         lblNewUserRegister.setFont(new Font("Times New Roman", Font.PLAIN, 42));
         lblNewUserRegister.setBounds(362, 52, 325, 50);
         contentPane.add(lblNewUserRegister);
