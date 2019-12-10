@@ -176,7 +176,7 @@ public class UserRegistration extends JFrame {
                         JOptionPane.showMessageDialog(btnNewButton, "This is alredy exist");
                     } else {
                         JOptionPane.showMessageDialog(btnNewButton,
-                            "Welcome, " + firstName + "Your account is sucessfully created");
+                            "Welcome, " + fromAscii(firstName) + "Your account is sucessfully created");
                     }
                     connection.close();
                 } catch (Exception exception) {
@@ -204,4 +204,20 @@ public class UserRegistration extends JFrame {
     	System.out.print(convertString);
     	return convertString;
     }
+	/**
+	 * Converts an input back into readable format
+	 * @author Izhak Hamidi
+	 * @param input the input to be converted into numbers
+	 * @return the input as Ascii numbers
+	 */
+	public String fromAscii(String input) {
+		String convertString="";
+		char[] convert=input.toCharArray();
+		for(int i =0;i<convert.length;i+=3)
+		{
+			convertString+= (char)Integer.parseInt(((char)convert[i]+""+(char)convert[i+1]+""+(char)convert[i+2]));
+		}
+		System.out.print(convertString);
+		return convertString;
+	}
 }

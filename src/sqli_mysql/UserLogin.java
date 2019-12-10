@@ -121,7 +121,9 @@ public class UserLogin extends JFrame {
 
                 try {
                 	Class.forName("com.mysql.jdbc.Driver");
-                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/swing_demo", "root", "password");
+                    Connection connection = DriverManager.getConnection(
+                    		"jdbc:mysql://localhost:3306/swing_demo",
+                    		"root", "password");
 
                     String query = "SELECT * FROM account WHERE user_name = '"+
                             userName+"' AND password = '"+password+"' ";
@@ -135,11 +137,13 @@ public class UserLogin extends JFrame {
                     ResultSet x = sta.executeQuery(query);
                     //System.out.println(x.getObject(3));
                     if (x.next()) {
-                        JOptionPane.showMessageDialog(btnNewButton, "Succesful login. Welcome: "+fromAscii(x.getString(1)));
+                        JOptionPane.showMessageDialog(btnNewButton, 
+                        		"Succesful login. Welcome: "+fromAscii(x.getString(1)));
                         
                     }
                     else {
-                        JOptionPane.showMessageDialog(btnNewButton, "Incorrect username or password, no login");
+                        JOptionPane.showMessageDialog(btnNewButton, 
+                        		"Incorrect username or password, no login");
                     }
                     
                     connection.close();
